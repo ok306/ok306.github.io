@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진송추어탕 메뉴</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; color: #8B4513; }
+        .menu-item { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .price { color: #FF0000; }
+    </style>
+</head>
+<body>
+    <h1>진송추어탕</h1>
+    <div class="menu-item"><span>진송추어탕</span><span class="price">11,000원</span></div>
+    <div class="menu-item"><span>얼큰이추어탕</span><span class="price">12,000원</span></div>
+    <div class="menu-item"><span>수제비추어탕</span><span class="price">12,000원</span></div>
+    <div class="menu-item"><span>우럭이추어탕</span><span class="price">12,000원</span></div>
+    <div class="menu-item"><span>통추어탕</span><span class="price">13,000원</span></div>
+    <div class="menu-item"><span>진송돈까스</span><span class="price">10,000원</span></div>
+    <div class="menu-item"><span>고구마치즈돈까스</span><span class="price">10,000원</span></div>
+    <div class="menu-item"><span>추어튀김(대)</span><span class="price">14,000원</span></div>
+    <div class="menu-item"><span>추어튀김(소)</span><span class="price">7,000원</span></div>
+    <div class="menu-item"><span>진송물만두</span><span class="price">6,000원</span></div>
+    <div class="menu-item"><span>고추만두</span><span class="price">6,000원</span></div>
+    <div class="menu-item"><span>매주,소주</span><span class="price">4,000원</span></div>
+    <div class="menu-item"><span>막걸리</span><span class="price">4,000원</span></div>
+    <div class="menu-item"><span>음료수</span><span class="price">2,000원</span></div>
+    <div class="menu-item"><span>공기밥</span><span class="price">1,000원</span></div>
+</body>
+</html>
