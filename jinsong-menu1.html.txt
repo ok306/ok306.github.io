@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진송추어탕 메뉴</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; color: #8B4513; }
+        .menu-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .price { color: #FF0000; }
+        button { background-color: #4CAF50; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+        #orderSummary { margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>진송추어탕</h1>
+    <div id="menu">
+        <div class="menu-item">
+            <span>진송추어탕</span>
+            <span class="price">11,000원</span>
+            <button onclick="addToOrder('진송추어탕', 11000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>얼큰이추어탕</span>
+            <span class="price">12,000원</span>
+            <button onclick="addToOrder('얼큰이추어탕', 12000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>수제비추어탕</span>
+            <span class="price">12,000원</span>
+            <button onclick="addToOrder('수제비추어탕', 12000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>우럭이추어탕</span>
+            <span class="price">12,000원</span>
+            <button onclick="addToOrder('우럭이추어탕', 12000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>통추어탕</span>
+            <span class="price">13,000원</span>
+            <button onclick="addToOrder('통추어탕', 13000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>진송돈까스</span>
+            <span class="price">10,000원</span>
+            <button onclick="addToOrder('진송돈까스', 10000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>고구마치즈돈까스</span>
+            <span class="price">10,000원</span>
+            <button onclick="addToOrder('고구마치즈돈까스', 10000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>추어튀김(대)</span>
+            <span class="price">14,000원</span>
+            <button onclick="addToOrder('추어튀김(대)', 14000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>추어튀김(소)</span>
+            <span class="price">7,000원</span>
+            <button onclick="addToOrder('추어튀김(소)', 7000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>진송물만두</span>
+            <span class="price">6,000원</span>
+            <button onclick="addToOrder('진송물만두', 6000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>고추만두</span>
+            <span class="price">6,000원</span>
+            <button onclick="addToOrder('고추만두', 6000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>매주,소주</span>
+            <span class="price">4,000원</span>
+            <button onclick="addToOrder('매주,소주', 4000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>막걸리</span>
+            <span class="price">4,000원</span>
+            <button onclick="addToOrder('막걸리', 4000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>음료수</span>
+            <span class="price">2,000원</span>
+            <button onclick="addToOrder('음료수', 2000)">주문</button>
+        </div>
+        <div class="menu-item">
+            <span>공기밥</span>
+            <span class="price">1,000원</span>
+            <button onclick="addToOrder('공기밥', 1000)">주문</button>
+        </div>
+    </div>
+    <div id="orderSummary">
+        <h2>주문 내역</h2>
+        <ul id="orderList"></ul>
+        <p>총 금액: <span id="totalAmount">0</span>원</p>
+        <button onclick="submitOrder()">주문 제출</button>
+    </div>
+
+    <script>
+        let order = {};
+        let total = 0;
+
+        function addToOrder(item, price) {
+            if (order[item]) {
+                order[item].quantity++;
+            } else {
+                order[item] = { price: price, quantity: 1 };
+            }
+            total += price;
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            let orderList = document.getElementById('orderList');
+            orderList.innerHTML = '';
+            for (let item in order) {
+                let li = document.createElement('li');
+                li.textContent = `${item} x ${order[item].quantity} - ${order[item].price * order[item].quantity}원`;
+                orderList.appendChild(li);
+            }
+            document.getElementById('totalAmount').textContent = total;
+        }
+
+        function submitOrder() {
+            alert('주문이 접수되었습니다. 총 금액: ' + total + '원');
+            order = {};
+            total = 0;
+            updateOrderSummary();
+        }
+    </script>
+</body>
+</html>
